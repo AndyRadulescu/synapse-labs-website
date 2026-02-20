@@ -2,6 +2,7 @@
 import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
+import Image from 'next/image';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 if (typeof window !== 'undefined') {
@@ -20,14 +21,14 @@ const projects = [
         title: "Real-time Dashboards",
         category: "Frontend Development",
         description: "Creating smooth, interactive dashboards with complex data visualization and real-time updates.",
-        image: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1000",
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000",
         link: "#"
     },
     {
         title: "Performance Engines",
         category: "Backend Systems",
         description: "Building high-performance API services and processing engines that handle millions of requests.",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=1000",
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000",
         link: "#"
     }
 ];
@@ -60,12 +61,13 @@ function Projects() {
                     {projects.map((project, idx) => (
                         <div key={idx} className="project-card group cursor-pointer">
                             <div className="aspect-[4/5] overflow-hidden rounded-2xl mb-6 relative">
-                                <img 
+                                <Image 
                                     src={project.image} 
                                     alt={project.title} 
-                                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
                                     <span className="text-white font-medium border border-white/40 px-6 py-2 rounded-full backdrop-blur-sm">View Project</span>
                                 </div>
                             </div>

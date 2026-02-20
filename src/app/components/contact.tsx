@@ -50,7 +50,7 @@ function Contact() {
         <section id="contact" className="py-24 px-8 md:px-24 bg-white text-black min-h-screen" ref={container}>
             <div className="max-w-7xl mx-auto">
                 <div className="contact-header mb-20 text-center">
-                    <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">Let's build something.</h2>
+                    <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">Let&apos;s build something.</h2>
                     <p className="text-xl opacity-60">Reach out for a collaboration or just to say hi.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16">

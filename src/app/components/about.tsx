@@ -1,57 +1,131 @@
 'use client';
-import React, { useRef } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import React, {useRef} from 'react';
+import {useGSAP} from '@gsap/react';
+import {gsap} from 'gsap';
+import {ScrollTrigger} from 'gsap/dist/ScrollTrigger';
+import Image from 'next/image';
 
 if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 }
+
+const expertise = ['Architecture', 'Performance', 'Security', 'Scale', 'Modern UI', 'AI Integration'];
 
 function About() {
     const container = useRef(null);
+    const circleRef = useRef(null);
+    const borderRef = useRef(null);
 
     useGSAP(() => {
-        gsap.from('.about-content', {
+        // Entrance animation
+        const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: '.about-content',
-                start: 'top 80%',
-            },
-            y: 100,
+                trigger: container.current,
+                start: 'top 70%',
+            }
+        });
+
+        tl.from('.about-title', {
+            y: 30,
             opacity: 0,
-            duration: 1,
-            ease: 'power4.out',
+            duration: 0.8,
+            ease: 'power3.out'
+        })
+            .from('.about-text p', {
+                y: 20,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: 'power3.out'
+            }, '-=0.4')
+            .from(circleRef.current, {
+                scale: 0.5,
+                opacity: 0,
+                duration: 1,
+                ease: 'back.out(1.7)'
+            }, '-=0.8');
+
+        // Continuous Floating Animation
+        gsap.to(circleRef.current, {
+            y: -20,
+            duration: 3,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut'
         });
-        
-        gsap.from('.about-image', {
-          scrollTrigger: {
-            trigger: '.about-image',
-            start: 'top 80%',
-          },
-          scale: 0.8,
-          opacity: 0,
-          duration: 1.2,
-          ease: 'power4.out',
+
+        // Continuous Rotating Border
+        gsap.to(borderRef.current, {
+            rotation: 360,
+            duration: 20,
+            repeat: -1,
+            ease: 'none'
         });
-    }, { scope: container });
+
+    }, {scope: container});
 
     return (
-        <section id="meet" className="py-24 px-8 md:px-24 bg-white text-black min-h-screen flex items-center" ref={container}>
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div className="about-image aspect-square bg-gray-200 rounded-2xl overflow-hidden relative shadow-2xl">
-                    <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-medium italic">
-                        [Photo of Andy Rădulescu]
+        <section id="meet" className="py-24 px-8 md:px-24 bg-white text-black overflow-hidden" ref={container}>
+            <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-24">
+                
+                <div className="w-full md:w-5/12 flex justify-center items-center relative py-16 md:py-20">
+                    <div
+                        ref={borderRef}
+                        className="absolute w-72 h-72 md:w-96 md:h-96 border-2 border-dashed border-orange-500/30 rounded-full z-0"
+                    ></div>
+                    
+                    <div
+                        ref={circleRef}
+                        className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gray-50 shadow-2xl overflow-hidden border-4 border-white flex items-center justify-center group z-10"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/10 to-transparent z-10"></div>
+
+                        <div className="absolute inset-0 z-20 transition-transform duration-500 group-hover:scale-110 flex items-center justify-center pointer-events-none">
+                            <div className="text-center p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span className="block text-4xl mb-2">👨‍💻</span>
+                                <p className="text-white font-bold text-sm bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm">Andy Rădulescu</p>
+                            </div>
+                        </div>
+
+                        <div className="relative w-full h-full">
+                            <Image 
+                                src="/andy-radulescu.webp" 
+                                alt="Andy Rădulescu" 
+                                fill 
+                                className="object-cover"
+                                priority
+                            />
+                        </div>
                     </div>
-                     <img src="/andy-radulescu.webp" alt="Andy Rădulescu" className="object-cover w-full h-full" />
+
+                    <div className="absolute w-48 h-48 bg-orange-400/10 rounded-full blur-3xl -z-10"></div>
                 </div>
-                <div className="about-content">
-                    <h2 className="text-5xl font-bold mb-8 tracking-tight">Meet the dev.</h2>
-                    <p className="text-xl leading-relaxed mb-6">
-                        Hi, I'm Andy. At Synapse Labs, I specialize in building high-performance, robust software solutions that solve real-world problems.
-                    </p>
-                    <p className="text-xl leading-relaxed opacity-80">
-                        With a focus on performance and quality, I help companies turn complex ideas into seamless digital experiences. Whether it's a high-performance backend or a smooth interactive frontend, I'm here to build it.
-                    </p>
+
+                <div className="w-full md:w-7/12">
+                    <span className="inline-block text-orange-600 font-bold tracking-widest text-xs uppercase mb-4">The Developer</span>
+                    <h2 className="about-title text-4xl md:text-6xl font-black mb-8 tracking-tight leading-tight">
+                        I build software that <span className="text-orange-600">scales.</span>
+                    </h2>
+
+                    <div className="about-text space-y-6 text-lg text-gray-600 leading-relaxed max-w-xl">
+                        <p>
+                            Hi, I&apos;m Andy. At Synapse Labs, I specialize in bridging the gap between complex business
+                            logic and high-performance software.
+                        </p>
+                        <p>
+                            My approach is simple: write clean, efficient code that solves problems today while being
+                            ready for the demands of tomorrow.
+                        </p>
+                    </div>
+
+                    <div className="mt-10 flex flex-wrap gap-3">
+                        {expertise.map(skill => (
+                            <span key={skill}
+                                  className="px-5 py-2 bg-gray-50 border border-gray-100 rounded-full text-xs font-bold text-gray-500 uppercase tracking-tighter hover:border-orange-500 hover:text-orange-600 transition-all cursor-default">
+                                {skill}
+                            </span>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

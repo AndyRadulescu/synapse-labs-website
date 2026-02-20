@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 
-import './hero-slider.css'
+import './hero-slider.scss';
 
 function HeroSlider() {
     const container = useRef(null);

@@ -1,7 +1,7 @@
 'use client';
 import React, {useEffect, useRef, useState} from 'react';
 
-import './menu.css';
+import './menu.scss';
 import {gsap} from 'gsap';
 import {useGSAP} from '@gsap/react';
 

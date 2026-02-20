@@ -38,7 +38,7 @@ npm run lint
 
 ### Components and Styling
 - **App Router:** All pages and layouts reside in `src/app`.
-- **Styling:** Tailwind CSS 4 is used, configured via `@tailwind` directives in `src/app/globals.scss`. Custom SCSS and co-located CSS files (e.g., `menu.css`) are used for complex styling and animations.
+- **Styling:** Tailwind CSS 4 is used, configured via `@tailwind` directives in `src/app/globals.scss`. Custom SCSS and co-located SCSS files (e.g., `menu.scss`) are used for complex styling and animations.
 - **Client Components:** Use `'use client';` for interactivity or GSAP animations.
 
 ### Animations
