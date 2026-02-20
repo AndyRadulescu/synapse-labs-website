@@ -6,8 +6,9 @@ import {gsap} from 'gsap';
 import {useGSAP} from '@gsap/react';
 
 const menuLinks = [
-    {path: 'meet', name: 'Meet the dev'},
-    {path: 'contact', name: 'Contact'}
+    {path: '#meet', name: 'Meet the dev'},
+    {path: '#projects', name: 'Projects'},
+    {path: '#contact', name: 'Contact'}
 ];
 
 function Menu() {
@@ -68,11 +69,11 @@ function Menu() {
                     <div className="menu-copy">
                         <div className="menu-links" onClick={toggleMenu}>
                             {menuLinks.map((link) => (
-                                <div className="menu-link-item my-8 sm:m-0" key={link.name}>
+                                <a href={link.path} className="menu-link-item my-8 sm:m-0 block" key={link.name}>
                                     <div className="menu-link-item-holder">
                                         <p>{link.name}</p>
                                     </div>
-                                </div>
+                                </a>
                             ))}
                         </div>
                         <div className="menu-info flex-col sm:flex-row">
