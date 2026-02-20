@@ -42,7 +42,7 @@ function About() {
                     <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-medium italic">
                         [Photo of Andy Rădulescu]
                     </div>
-                    {/* <img src="/path-to-your-photo.jpg" alt="Andy Rădulescu" className="object-cover w-full h-full" /> */}
+                     <img src="/andy-radulescu.webp" alt="Andy Rădulescu" className="object-cover w-full h-full" />
                 </div>
                 <div className="about-content">
                     <h2 className="text-5xl font-bold mb-8 tracking-tight">Meet the dev.</h2>

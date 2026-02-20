@@ -13,7 +13,7 @@ const menuLinks = [
 
 function Menu() {
     const container = useRef(null);
-    const timeline = useRef<gsap.core.Timeline>();
+    const timeline = useRef<gsap.core.Timeline>(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useGSAP(() => {
