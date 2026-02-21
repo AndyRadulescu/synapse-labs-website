@@ -29,7 +29,13 @@ function HeroSlider() {
     return (
         <section className="hero-slider flex flex-col items-center justify-center h-screen relative overflow-hidden"
                  ref={container}>
-            <div className="text-center">
+            <div className="hero-gradient">
+                <div className="blob blob-1"></div>
+                <div className="blob blob-2"></div>
+                <div className="blob blob-3"></div>
+            </div>
+            
+            <div className="text-center z-10">
                 <div
                     className="hero-title text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-4 flex justify-center items-center">
                     <Image src="/logo.png" alt={'logo'} width={100} height={100}

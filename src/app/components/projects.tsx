@@ -54,7 +54,7 @@ function Projects() {
     }, { scope: container });
 
     return (
-        <section id="projects" className="py-24 px-8 md:px-24 bg-gray-50 text-black min-h-screen w-full" ref={container}>
+        <section id="projects" className="py-24 px-8 md:px-24 bg-gray-100 text-black min-h-screen w-full" ref={container}>
             <div className="max-w-7xl mx-auto">
                 <div className="mb-10 md:mb-20">
                     <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">Project Showcase.</h2>
