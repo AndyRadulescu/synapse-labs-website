@@ -34,13 +34,16 @@ function HeroSlider() {
                 <div className="blob blob-2"></div>
                 <div className="blob blob-3"></div>
             </div>
-            
-            <div className="text-center z-10">
-                <div
-                    className="hero-title text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-4 flex justify-center items-center">
-                    <Image src="/logo.png" alt={'logo'} width={100} height={100}
-                           className="w-[1.5em] h-[1.5em] object-contain"/><h1>ynapse LABS</h1>
-                </div>
+
+            <div className="z-10">
+                <h1
+                    className="hero-title md:text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-4 flex justify-center items-center flex-wrap">
+                    <div className="flex items-center justify-center">
+                        <Image src="/logo.png" alt={'logo'} width={100} height={100}
+                               className="w-[1.5em] h-[1.5em] object-contain"/><span className="mr-2">ynapse</span>
+                    </div>
+                    <span> LABS</span>
+                </h1>
                 <p className="hero-tagline text-xl md:text-2xl font-light opacity-80 max-w-2xl mx-auto px-4">
                     Crafting robust software solutions and providing expert IT consulting for the modern era.
                 </p>
