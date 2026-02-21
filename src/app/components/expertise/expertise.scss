@@ -1,0 +1,47 @@
+.expertise-scroller {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  user-select: none;
+  padding: 1.25rem 0;
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+
+  &:hover .expertise-inner,
+  &:active .expertise-inner {
+    animation-play-state: paused;
+  }
+}
+
+.expertise-inner {
+    display: flex;
+    width: max-content;
+    gap: 1.25rem;
+    animation: scroll-left 40s linear infinite;
+}
+
+.expertise-list {
+  display: flex;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.expertise-item {
+    white-space: nowrap;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Translate by exactly one full list width + gap */
+    transform: translateX(calc(-50% - 0.625rem));
+  }
+}

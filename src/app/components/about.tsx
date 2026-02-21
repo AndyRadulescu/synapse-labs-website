@@ -4,12 +4,11 @@ import {useGSAP} from '@gsap/react';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/dist/ScrollTrigger';
 import Image from 'next/image';
+import Expertise from './expertise/expertise';
 
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 }
-
-const expertise = ['Architecture', 'Performance', 'Security', 'Scale', 'Modern UI', 'AI Integration','Typescript', 'React/Next.js','Java/Kotlin','Nestjs / Spring-boot','microservices'];
 
 function About() {
     const container = useRef(null);
@@ -65,33 +64,38 @@ function About() {
     }, {scope: container});
 
     return (
-        <section id="meet" className="py-24 px-8 md:px-24 bg-white text-black overflow-hidden rounded-t-xl" ref={container}>
+        <section id="meet" className="py-24 px-8 md:px-24 bg-white text-black overflow-hidden rounded-t-xl w-full"
+                 ref={container}>
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-24">
-                
+
                 <div className="w-full md:w-5/12 flex justify-center items-center relative py-16 md:py-20">
                     <div
                         ref={borderRef}
                         className="absolute w-72 h-72 md:w-96 md:h-96 border-2 border-dashed border-orange-500/30 rounded-full z-0"
                     ></div>
-                    
+
                     <div
                         ref={circleRef}
                         className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gray-50 shadow-2xl overflow-hidden border-4 border-white flex items-center justify-center group z-10"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/10 to-transparent z-10"></div>
+                        <div
+                            className="absolute inset-0 bg-gradient-to-tr from-orange-500/10 to-transparent z-10"></div>
 
-                        <div className="absolute inset-0 z-20 transition-transform duration-500 group-hover:scale-110 flex items-center justify-center pointer-events-none">
-                            <div className="text-center p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div
+                            className="absolute inset-0 z-20 transition-transform duration-500 group-hover:scale-110 flex items-center justify-center pointer-events-none">
+                            <div
+                                className="text-center p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <span className="block text-4xl mb-2">👨‍💻</span>
-                                <p className="text-white font-bold text-sm bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm">Andy Rădulescu</p>
+                                <p className="text-white font-bold text-sm bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm">Andy
+                                    Rădulescu</p>
                             </div>
                         </div>
 
                         <div className="relative w-full h-full">
-                            <Image 
-                                src="/andy-radulescu.webp" 
-                                alt="Andy Rădulescu" 
-                                fill 
+                            <Image
+                                src="/andy-radulescu.webp"
+                                alt="Andy Rădulescu"
+                                fill
                                 className="object-cover"
                                 priority
                             />
@@ -101,7 +105,7 @@ function About() {
                     <div className="absolute w-48 h-48 bg-orange-400/10 rounded-full blur-3xl -z-10"></div>
                 </div>
 
-                <div className="w-full md:w-7/12">
+                <div className="w-full md:w-7/12 min-w-0">
                     <span className="inline-block text-orange-600 font-bold tracking-widest text-xs uppercase mb-4">The Developer</span>
                     <h2 className="about-title text-4xl md:text-6xl font-black mb-8 tracking-tight leading-tight">
                         I build software that <span className="text-orange-600">scales.</span>
@@ -109,7 +113,8 @@ function About() {
 
                     <div className="about-text space-y-6 text-lg text-gray-600 leading-relaxed max-w-xl">
                         <p>
-                            Hi, I&apos;m Andy. At Synapse Labs, I specialize in bridging the gap between complex business
+                            Hi, I&apos;m Andy. At Synapse Labs, I specialize in bridging the gap between complex
+                            business
                             logic and high-performance software.
                         </p>
                         <p>
@@ -118,14 +123,7 @@ function About() {
                         </p>
                     </div>
 
-                    <div className="mt-10 flex flex-wrap gap-3">
-                        {expertise.map(skill => (
-                            <span key={skill}
-                                  className="px-5 py-2 bg-gray-50 border border-gray-100 rounded-full text-xs font-bold text-gray-500 uppercase tracking-tighter hover:border-orange-500 hover:text-orange-600 transition-all cursor-default">
-                                {skill}
-                            </span>
-                        ))}
-                    </div>
+                    <Expertise/>
                 </div>
             </div>
         </section>
