@@ -11,7 +11,8 @@ const expertise = [
     'AI Integration', 
     'Typescript', 
     'React/Next.js', 
-    'Java/Kotlin', 
+    'Java/Kotlin',
+    'Flutter/Dart',
     'Nestjs / Spring-boot', 
     'microservices'
 ];

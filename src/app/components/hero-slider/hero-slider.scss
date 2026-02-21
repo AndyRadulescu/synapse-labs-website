@@ -1,3 +1,72 @@
+.hero-gradient {
+    background-color: #000;
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    overflow: hidden;
+    z-index: -1;
+    will-change: transform;
+    animation: rotate-bg 50s linear infinite;
+
+    .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(120px);
+        opacity: 0.8;
+        mix-blend-mode: screen;
+        will-change: transform;
+    }
+
+    .blob-1 {
+        width: 25rem;
+        height: 25rem;
+        background: radial-gradient(circle, rgba(190, 27, 74, 0.7) 0%, rgba(245, 74, 0, 0.4) 40%, transparent 75%);
+        bottom: 15%;
+        left: 25%;
+        animation: blob-1-move 30s ease-in-out infinite alternate;
+        z-index: 4;
+    }
+
+    .blob-2 {
+        width: 35rem;
+        height: 35rem;
+        background: radial-gradient(circle, rgba(0, 81, 255, 0.7) 0%, rgba(1, 23, 65, 0.4) 30%, transparent 70%);
+        bottom: 25%;
+        left: 20%;
+        animation: blob-2-move 45s ease-in-out infinite alternate;
+        z-index: 2;
+    }
+
+    .blob-3 {
+        width: 45rem;
+        height: 45rem;
+        background: radial-gradient(circle, rgba(255, 0, 106, 0.7) 0%, rgba(86, 16, 91, 0.4) 30%, transparent 60%);
+        bottom: 15%;
+        left: 20%;
+        animation: blob-3-move 35s ease-in-out infinite alternate;
+        z-index: 1;
+    }
+}
+
+@keyframes rotate-bg {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20rem) translateX(20rem); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+@keyframes blob-1-move {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(5vw, 5vh) scale(1.1); }
+}
+
+@keyframes blob-2-move {
+    0% { transform: translate(0, 0) scale(1.1); }
+    100% { transform: translate(-5vw, -5vh) scale(0.95); }
+}
+
+
 .hero-slider {
     width: 100%;
     min-height: 100svh;
@@ -6,6 +75,7 @@
     align-items: center;
     justify-content: center;
     padding: 2em;
+    position: relative;
 }
 
 .hero-title {

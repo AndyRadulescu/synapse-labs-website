@@ -11,25 +11,28 @@ if (typeof window !== 'undefined') {
 
 const projects = [
     {
-        title: "Robust Infrastructure",
-        category: "Cloud Architecture",
+        title: "Jumio's Web sdk",
+        category: "Fullstack Development",
         description: "Designing and implementing scalable, fault-tolerant infrastructure for high-traffic applications.",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000",
-        link: "#"
+        image: "/jumio.jpg",
+        alt: "Jumio's Web sdk",
+        link: "https://www.jumio.com/"
     },
     {
-        title: "Real-time Dashboards",
-        category: "Frontend Development",
-        description: "Creating smooth, interactive dashboards with complex data visualization and real-time updates.",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000",
-        link: "#"
+        title: "Kayus menu website",
+        category: "Website Development",
+        description: "Beyond visual design: Engineering robust systems for instantaneous content delivery and intuitive data management.",
+        image: "/kayus-menu.jpg",
+        alt: "Kayus menu website",
+        link: "https://menu.kayus.ro"
     },
     {
-        title: "Performance Engines",
-        category: "Backend Systems",
-        description: "Building high-performance API services and processing engines that handle millions of requests.",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000",
-        link: "#"
+        title: "Amazonia Fitlab",
+        category: "App development",
+        description: "Building the robust architecture behind modern apps, from scalable API design to high-speed data processing engines.",
+        image: "/amazonia-1.jpg",
+        alt: "Amazonia Fitlab",
+        link: "https://app.amazonia-fitlab.ro/auth/login"
     }
 ];
 
@@ -51,19 +54,19 @@ function Projects() {
     }, { scope: container });
 
     return (
-        <section id="projects" className="py-24 px-8 md:px-24 bg-gray-50 text-black min-h-screen w-full" ref={container}>
+        <section id="projects" className="py-24 px-8 md:px-24 bg-gray-100 text-black min-h-screen w-full" ref={container}>
             <div className="max-w-7xl mx-auto">
-                <div className="mb-20">
+                <div className="mb-10 md:mb-20">
                     <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">Project Showcase.</h2>
                     <p className="text-xl opacity-60">A glimpse into the robust solutions built by Synapse Labs.</p>
                 </div>
                 <div className="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, idx) => (
-                        <div key={idx} className="project-card group cursor-pointer">
+                        <a href={project.link} target="_blank" key={idx} className="project-card group cursor-pointer">
                             <div className="aspect-[4/5] overflow-hidden rounded-2xl mb-6 relative">
                                 <Image 
                                     src={project.image} 
-                                    alt={project.title} 
+                                    alt={project.alt}
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
@@ -74,7 +77,7 @@ function Projects() {
                             <p className="text-xs font-bold uppercase tracking-widest text-orange-600 mb-2">{project.category}</p>
                             <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
                             <p className="text-gray-600 leading-relaxed">{project.description}</p>
-                        </div>
+                        </a>
                     ))}
                 </div>
             </div>
