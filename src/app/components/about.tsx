@@ -9,7 +9,7 @@ if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 }
 
-const expertise = ['Architecture', 'Performance', 'Security', 'Scale', 'Modern UI', 'AI Integration'];
+const expertise = ['Architecture', 'Performance', 'Security', 'Scale', 'Modern UI', 'AI Integration','Typescript', 'React/Next.js','Java/Kotlin','Nestjs / Spring-boot','microservices'];
 
 function About() {
     const container = useRef(null);
@@ -65,7 +65,7 @@ function About() {
     }, {scope: container});
 
     return (
-        <section id="meet" className="py-24 px-8 md:px-24 bg-white text-black overflow-hidden" ref={container}>
+        <section id="meet" className="py-24 px-8 md:px-24 bg-white text-black overflow-hidden rounded-t-xl" ref={container}>
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-24">
                 
                 <div className="w-full md:w-5/12 flex justify-center items-center relative py-16 md:py-20">
