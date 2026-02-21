@@ -47,7 +47,7 @@ function Contact() {
     }, { scope: container });
 
     return (
-        <section id="contact" className="py-24 px-8 md:px-24 bg-white text-black min-h-screen rounded-b-xl" ref={container}>
+        <section id="contact" className="py-24 px-8 md:px-24 bg-white text-black min-h-screen rounded-b-xl overflow-x-hidden" ref={container}>
             <div className="max-w-7xl mx-auto">
                 <div className="contact-header mb-20 text-center">
                     <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">Let&apos;s build something.</h2>
@@ -71,7 +71,7 @@ function Contact() {
                             <button type="submit" className="w-full md:w-fit bg-black text-white px-10 py-4 rounded-full font-bold hover:bg-orange-600 transition-colors uppercase tracking-widest text-sm">Send Message</button>
                         </form>
                     </div>
-                    <div className="contact-info-container flex flex-col justify-between">
+                    <div className="w-full contact-info-container flex flex-col justify-between">
                         <div className="space-y-4 md:space-y-12 text-2xl font-medium text-lg lg:text-2xl font-medium text-2xl font-medium">
                             <div>
                                 <h3 className="text-sm font-bold uppercase tracking-wider mb-2 md:mb-4 opacity-40">Email Us</h3>
