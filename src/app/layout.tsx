@@ -7,10 +7,7 @@ const inter = Inter({subsets: ['latin']});
 
 export const metadata: Metadata = {
     title: 'Synapse LABS S.R.L.',
-    description: 'We are a software development company providing IT consulting and robust software solutions for your needs.',
-    icons: {
-        icon: '/favicon.ico'
-    }
+    description: 'We are a software development company providing IT consulting and robust software solutions for your needs.'
 };
 
 export default function RootLayout({
