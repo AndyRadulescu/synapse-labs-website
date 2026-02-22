@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { EmailForm } from './email-form';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -55,27 +56,13 @@ function Contact() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                     <div className="contact-form-container">
-                        <form className="space-y-6">
-                            <div>
-                                <label className="block text-sm font-bold uppercase tracking-wider mb-2">Name</label>
-                                <input type="text" className="w-full border-b-2 border-gray-200 py-4 focus:border-black outline-none transition-colors" placeholder="Your Name" />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-bold uppercase tracking-wider mb-2">Email</label>
-                                <input type="email" className="w-full border-b-2 border-gray-200 py-4 focus:border-black outline-none transition-colors" placeholder="your@email.com" />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-bold uppercase tracking-wider mb-2">Message</label>
-                                <textarea className="w-full border-b-2 border-gray-200 py-4 focus:border-black outline-none transition-colors min-h-[150px]" placeholder="Tell us about your project"></textarea>
-                            </div>
-                            <button type="submit" className="w-full md:w-fit bg-black text-white px-10 py-4 rounded-full font-bold hover:bg-orange-600 transition-colors uppercase tracking-widest text-sm">Send Message</button>
-                        </form>
+                        <EmailForm />
                     </div>
                     <div className="w-full contact-info-container flex flex-col justify-between">
                         <div className="space-y-4 md:space-y-12 text-2xl font-medium text-lg lg:text-2xl font-medium text-2xl font-medium">
                             <div>
                                 <h3 className="text-sm font-bold uppercase tracking-wider mb-2 md:mb-4 opacity-40">Email Us</h3>
-                                <p className="">andyradulescu@synapeselabs.org</p>
+                                <p className="">andyradulescu@synapselabs.org</p>
                             </div>
                             <div>
                                 <h3 className="text-sm font-bold uppercase tracking-wider mb-2 md:mb-4 opacity-40">Call Us</h3>
