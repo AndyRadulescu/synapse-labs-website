@@ -39,7 +39,7 @@ function HeroSlider() {
                 <h1
                     className="hero-title md:text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-4 flex justify-center items-center flex-wrap">
                     <div className="flex items-center justify-center">
-                        <Image src="/logo.png" alt={'logo'} width={100} height={100}
+                        <Image src="/logo-1.png" alt={'logo'} width={100} height={100}
                                className="w-[1.5em] h-[1.5em] object-contain"/><span className="mr-2">ynapse</span>
                     </div>
                     <span> LABS</span>

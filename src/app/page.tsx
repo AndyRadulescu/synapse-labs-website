@@ -1,6 +1,6 @@
 import HeroSlider from '@/app/components/hero-slider/hero-slider';
-import About from '@/app/components/about';
-import Projects from '@/app/components/projects';
+import About from '@/app/components/about/about';
+import Projects from '@/app/components/projects/projects';
 import Contact from '@/app/components/contact';
 import Footer from '@/app/components/footer';
 

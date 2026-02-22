@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import Image from 'next/image';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import './projects.scss';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -54,7 +55,9 @@ function Projects() {
     }, { scope: container });
 
     return (
-        <section id="projects" className="py-24 px-8 md:px-24 bg-gray-100 text-black min-h-screen w-full" ref={container}>
+        <section id="projects"
+                 className="py-24 z-10 px-8 md:px-24 bg-gray-100 text-black min-h-screen w-full relative"
+                 ref={container}>
             <div className="max-w-7xl mx-auto">
                 <div className="mb-10 md:mb-20">
                     <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">Project Showcase.</h2>
@@ -64,14 +67,16 @@ function Projects() {
                     {projects.map((project, idx) => (
                         <a href={project.link} target="_blank" key={idx} className="project-card group cursor-pointer">
                             <div className="aspect-[4/5] overflow-hidden rounded-2xl mb-6 relative">
-                                <Image 
-                                    src={project.image} 
+                                <Image
+                                    src={project.image}
                                     alt={project.alt}
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
-                                    <span className="text-white font-medium border border-white/40 px-6 py-2 rounded-full backdrop-blur-sm">View Project</span>
+                                <div
+                                    className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
+                                    <span
+                                        className="text-white font-medium border border-white/40 px-6 py-2 rounded-full backdrop-blur-sm">View Project</span>
                                 </div>
                             </div>
                             <p className="text-xs font-bold uppercase tracking-widest text-orange-600 mb-2">{project.category}</p>

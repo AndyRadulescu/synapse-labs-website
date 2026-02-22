@@ -4,7 +4,7 @@ import {useGSAP} from '@gsap/react';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/dist/ScrollTrigger';
 import Image from 'next/image';
-import Expertise from './expertise/expertise';
+import Expertise from '../expertise/expertise';
 
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
@@ -64,7 +64,7 @@ function About() {
     }, {scope: container});
 
     return (
-        <section id="meet" className="py-24 px-8 md:px-24 bg-white text-black overflow-hidden rounded-t-xl w-full lg:w-7/8"
+        <section id="meet" className="py-24 px-8 md:px-24  bg-white text-black overflow-hidden rounded-t-xl w-full lg:w-7/8"
                  ref={container}>
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-24">
 
