@@ -14,10 +14,11 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 export function EmailForm() {
+    const [isSubmitted, setIsSubmitted] = React.useState(false);
     const {
         register,
         handleSubmit,
-        formState: {errors, isSubmitting},
+        formState: { errors, isSubmitting },
         reset,
     } = useForm<ContactFormData>({
         resolver: zodResolver(contactSchema),
@@ -34,7 +35,7 @@ export function EmailForm() {
             });
 
             if (response.ok) {
-                alert('Message sent successfully!');
+                setIsSubmitted(true);
                 reset();
             } else {
                 alert('Failed to send message. Please try again later.');
@@ -45,8 +46,31 @@ export function EmailForm() {
         }
     };
 
+    if (isSubmitted) {
+        return (
+            <div className="bg-gray-50 border-2 border-black/5 p-12 rounded-2xl text-center space-y-4 animate-in fade-in zoom-in duration-500">
+                <div className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-8 h-8">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                </div>
+                <h3 className="text-3xl font-bold">Message Sent!</h3>
+                <p className="text-lg opacity-60">
+                    Thank you for reaching out. We&apos;ll get back to you as soon as possible.
+                </p>
+                <button 
+                    onClick={() => setIsSubmitted(false)}
+                    className="mt-8 text-sm font-bold uppercase tracking-widest hover:text-orange-600 transition-colors"
+                >
+                    Send another message
+                </button>
+            </div>
+        );
+    }
+
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+
             <div>
                 <label className="block text-sm font-bold uppercase tracking-wider mb-2">Name</label>
                 <input
