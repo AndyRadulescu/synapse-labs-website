@@ -1,7 +1,7 @@
 import HeroSlider from '@/app/components/hero-slider/hero-slider';
 import About from '@/app/components/about/about';
 import Projects from '@/app/components/projects/projects';
-import Contact from '@/app/components/contact';
+import Contact from '@/app/components/contact/contact';
 import Footer from '@/app/components/footer';
 
 export default function Home() {
