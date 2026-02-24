@@ -65,7 +65,7 @@ function Projects() {
                 </div>
                 <div className="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, idx) => (
-                        <a href={project.link} target="_blank" key={idx} className="project-card group cursor-pointer">
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" key={idx} className="project-card group cursor-pointer">
                             <div className="aspect-[4/5] overflow-hidden rounded-2xl mb-6 relative">
                                 <Image
                                     src={project.image}
