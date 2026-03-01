@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import {Inter} from 'next/font/google';
 import './globals.scss';
 import {Analytics} from '@vercel/analytics/next';
+import CookieBanner from '@/app/components/cookie-banner/cookie-banner';
 
 const inter = Inter({subsets: ['latin']});
 
@@ -70,6 +71,7 @@ export default function RootLayout({
         <html lang="en">
         <body className={inter.className}>
         {children}
+        <CookieBanner />
         </body>
         <Analytics/>
         </html>
