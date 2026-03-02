@@ -51,7 +51,7 @@ const CookieBanner: React.FC = () => {
             >
                 <div
                     className="bg-white/5 border-b border-pink-700/30 px-4 py-2 flex justify-between items-center backdrop-blur-sm">
-                    <div className="flex gap-1.5">
+                    <div className="flex gap-1.5" onClick={handleDeny}>
                         <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/80"></span>
                         <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]/80"></span>
                         <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]/80"></span>

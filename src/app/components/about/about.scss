@@ -1,0 +1,78 @@
+.about-section {
+    view-timeline-name: --about-entry;
+    view-timeline-axis: block;
+}
+
+.about-title {
+    opacity: 0;
+    animation: about-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-timeline: --about-entry;
+    animation-range: entry 10% cover 30%;
+}
+
+.about-text p {
+    opacity: 0;
+    animation: about-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-timeline: --about-entry;
+    
+    @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+            animation-range: entry calc(15% + (#{$i} * 5%)) cover calc(35% + (#{$i} * 5%));
+        }
+    }
+}
+
+.about-image-container {
+    opacity: 0;
+    animation: about-scale-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-timeline: --about-entry;
+    animation-range: entry 10% cover 40%;
+}
+
+.floating-circle {
+    animation: float 6s ease-in-out infinite alternate;
+}
+
+.rotating-border {
+    animation: rotate 30s linear infinite;
+}
+
+@keyframes about-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes about-scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

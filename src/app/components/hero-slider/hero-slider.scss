@@ -92,3 +92,35 @@
     font-weight: 300;
     color: rgba(var(--foreground-rgb), 0.8);
 }
+
+@keyframes hero-title-in {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hero-tagline-in {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 0.8;
+        transform: translateY(0);
+    }
+}
+
+.animate-hero-title {
+    animation: hero-title-in 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+    opacity: 0;
+}
+
+.animate-hero-tagline {
+    animation: hero-tagline-in 1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+    opacity: 0;
+}

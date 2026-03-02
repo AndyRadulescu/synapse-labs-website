@@ -5,6 +5,7 @@
   user-select: none;
   padding: 1.25rem 0;
   position: relative;
+  cursor: grab;
   mask-image: linear-gradient(
     to right,
     transparent,
@@ -13,9 +14,8 @@
     transparent
   );
 
-  &:hover .expertise-inner,
-  &:active .expertise-inner {
-    animation-play-state: paused;
+  &:active {
+    cursor: grabbing;
   }
 }
 
@@ -23,7 +23,7 @@
     display: flex;
     width: max-content;
     gap: 1.25rem;
-    animation: scroll-left 40s linear infinite;
+    will-change: transform;
 }
 
 .expertise-list {
@@ -34,14 +34,4 @@
 
 .expertise-item {
     white-space: nowrap;
-}
-
-@keyframes scroll-left {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    /* Translate by exactly one full list width + gap */
-    transform: translateX(calc(-50% - 0.625rem));
-  }
 }
