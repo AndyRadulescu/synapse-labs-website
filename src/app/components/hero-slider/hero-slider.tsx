@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import ScrollDownButton from './scroll-down-button';
 
 import './hero-slider.scss';
 
@@ -8,7 +9,7 @@ function HeroSlider() {
         <section className="hero-slider flex flex-col items-center justify-center h-screen relative overflow-hidden">
             <div className="hero-gradient">
                 <div className="blob blob-1"></div>
-                <div className="blob blob-2"></div>
+                <div className="blob blob-2 :"></div>
                 <div className="blob blob-3"></div>
             </div>
 
@@ -25,12 +26,8 @@ function HeroSlider() {
                     Crafting robust software solutions and providing expert IT consulting for the modern era.
                 </p>
             </div>
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                     strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
-                </svg>
-            </div>
+            
+            <ScrollDownButton />
         </section>
     );
 }
