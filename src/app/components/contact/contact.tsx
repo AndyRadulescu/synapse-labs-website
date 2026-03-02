@@ -1,54 +1,10 @@
-'use client';
-import React, { useRef } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import React from 'react';
 import { EmailForm } from './email-form';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import './contact.scss';
 
 function Contact() {
-    const container = useRef(null);
-
-    useGSAP(() => {
-        gsap.from('.contact-header', {
-            scrollTrigger: {
-                trigger: '.contact-header',
-                start: 'top 80%',
-            },
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: 'power4.out',
-        });
-        
-        gsap.from('.contact-form-container', {
-          scrollTrigger: {
-            trigger: '.contact-form-container',
-            start: 'top 80%',
-          },
-          x: -50,
-          opacity: 0,
-          duration: 1,
-          ease: 'power4.out',
-        });
-        
-        gsap.from('.contact-info-container', {
-          scrollTrigger: {
-            trigger: '.contact-info-container',
-            start: 'top 80%',
-          },
-          x: 50,
-          opacity: 0,
-          duration: 1,
-          ease: 'power4.out',
-        });
-    }, { scope: container });
-
     return (
-        <section id="contact" className="py-24 px-8 md:px-24 bg-white text-black min-h-screen rounded-b-xl overflow-x-hidden" ref={container}>
+        <section id="contact" className="contact-section py-24 px-8 md:px-24 bg-white text-black min-h-screen rounded-b-xl overflow-x-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="contact-header mb-20 text-center">
                     <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">Let&apos;s build something.</h2>
@@ -59,7 +15,7 @@ function Contact() {
                         <EmailForm />
                     </div>
                     <div className="w-full contact-info-container flex flex-col justify-between">
-                        <div className="space-y-4 md:space-y-12 text-2xl font-medium text-lg lg:text-2xl font-medium text-2xl font-medium">
+                        <div className="space-y-4 md:space-y-12 text-2xl font-medium lg:text-2xl">
                             <div>
                                 <h3 className="text-sm font-bold uppercase tracking-wider mb-2 md:mb-4 opacity-40">Email Us</h3>
                                 <p className="">andyradulescu@synapselabs.org</p>
