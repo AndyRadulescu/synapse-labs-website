@@ -39,10 +39,10 @@ const CookieBanner: React.FC = () => {
 
     return (
         <div
-            className="fixed bottom-4 right-4 left-4 sm:left-auto sm:bottom-8 sm:right-8 z-[1000] w-auto sm:w-full sm:max-w-[400px] pointer-events-none flex justify-end font-mono">
+            className="fixed bottom-4 right-8 left-4 sm:left-auto sm:bottom-8 z-[1000] w-auto sm:w-full sm:max-w-[400px] pointer-events-none flex justify-end font-mono">
             <div
                 className={`
-                    bg-black/60 backdrop-blur-md border border-pink-700/50 rounded-lg shadow-[0_0_20px_rgba(51,255,51,0.15),0_10px_30px_rgba(0,0,0,0.5)] 
+                    bg-black/60 backdrop-blur-md border border-pink-700/50 rounded-lg shadow-[0_0_20px_rgba(255,105,180,0.2),0_10px_30px_rgba(0,0,0,0.5)] 
                     overflow-hidden pointer-events-auto w-full transition-all duration-500 ease-out
                     transform origin-bottom-right
                     ${show ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'}
@@ -73,7 +73,7 @@ const CookieBanner: React.FC = () => {
                     </div>
                     <div className="mb-2">
                         <span
-                            className="terminal-cursor inline-block w-2 h-4 bg-pink-700 align-middle shadow-[0_0_8px_rgba(51,255,51,0.5)]"></span>
+                            className="terminal-cursor inline-block w-2 h-4 bg-pink-700 align-middle shadow-[0_0_8px_rgba(255,105,180,0.5)]"></span>
                     </div>
                     <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4">
                         <button

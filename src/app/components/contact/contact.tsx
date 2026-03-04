@@ -18,15 +18,15 @@ function Contact() {
                         <div className="space-y-4 md:space-y-12 text-2xl font-medium lg:text-2xl">
                             <div>
                                 <h3 className="text-sm font-bold uppercase tracking-wider mb-2 md:mb-4 opacity-40">Email Us</h3>
-                                <p className="">andyradulescu@synapselabs.org</p>
+                                <p className="text-lg md:text-xl">andyradulescu@synapselabs.org</p>
                             </div>
                             <div>
                                 <h3 className="text-sm font-bold uppercase tracking-wider mb-2 md:mb-4 opacity-40">Call Us</h3>
-                                <p className="">+40 735747637</p>
+                                <p className="text-lg md:text-xl">+40 735747637</p>
                             </div>
                             <div>
                                 <h3 className="text-sm font-bold uppercase tracking-wider mb-2 md:mb-4 opacity-40">Location</h3>
-                                <p className=" text-balance">Brașov, Romania — Available Worldwide</p>
+                                <p className="text-balance text-lg md:text-xl">Brașov, Romania — Available Worldwide</p>
                             </div>
                         </div>
                         <div className="pt-12 text-gray-400 text-sm">
